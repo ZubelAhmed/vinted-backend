@@ -42,6 +42,7 @@ router.post(
         owner: req.user,
       });
 
+      console.log("req.files =>", req.files);
       if (req.files) {
         const convertedPicture = convertToBase64(req.files.picture);
         // console.log(convertedPicture); // affiche une belle base64
@@ -51,7 +52,7 @@ router.post(
         newOffer.product_image = uploadResult;
       }
 
-      console.log(newOffer);
+      //   console.log(newOffer);
       await newOffer.save();
 
       return res.status(201).json(newOffer);
