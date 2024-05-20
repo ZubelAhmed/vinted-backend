@@ -9,6 +9,7 @@ console.log("Hello World ");
 app.use(cors());
 app.use(express.json());
 
+console.log("Hello Zubel");
 mongoose.connect(process.env.MONGODB_URI);
 
 cloudinary.config({
